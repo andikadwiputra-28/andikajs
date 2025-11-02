@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTOFOLIO ANDIKA DWI PUTRA</title>
+    
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+
+    <div class="container-custom">
+       
+        <div class="hero-section">
+            <h1 id="greeting">Halo nama saya Andika Dwi Putra</h1>
+            <p>Mahasiswa Semester 1 di Universitas Dian Nuswantoro</p>
+            <img src="andika.jpg" alt="foto andika" class="profile-img" id="profileImg">
+            <div>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2 class="section-title">📋 Tentang Diri Saya</h2>
+            <table class="info-table">
+                <tr>
+                    <th>Nama</th>
+                    <td>Andika Dwi Putra</td>
+                </tr>
+                <tr>
+                    <th>NIM</th>
+                    <td>A12.2024.07169</td>
+                </tr>
+                <tr>
+                    <th>Program Studi</th>
+                    <td>Sistem Informasi</td>
+                </tr>
+                <tr>
+                    <th>Universitas</th>
+                    <td>Universitas Dian Nuswantoro</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>andikaputradwi006@gmail.com</td>
+                </tr>
+            </table>
+
+            <!-- SKILLS SECTION -->
+            <h2 class="section-title">💻 Skill yang Saya Punya</h2>
+            <div class="skills-container">
+                <div class="skill-card" onclick="showSkillInfo('Microsoft Office')">
+                    <div style="font-size: 3rem;">📊</div>
+                    <h4>Microsoft Office</h4>
+                </div>
+                <div class="skill-card" onclick="showSkillInfo('HTML')">
+                    <div style="font-size: 3rem;">🌐</div>
+                    <h4>HTML</h4>
+                </div>
+                <div class="skill-card" onclick="showSkillInfo('CSS')">
+                    <div style="font-size: 3rem;">🎨</div>
+                    <h4>CSS</h4>
+                </div>
+                <div class="skill-card" onclick="showSkillInfo('PHP')">
+                    <div style="font-size: 3rem;">🐘</div>
+                    <h4>PHP</h4>
+                </div>
+                <div class="skill-card" onclick="showSkillInfo('JavaScript')">
+                    <div style="font-size: 3rem;">⚡</div>
+                    <h4>JavaScript</h4>
+                </div>
+            </div>
+
+            <div class="interactive-section">
+                <h2 class="section-title">📱 Social Media</h2>
+                <div class="social-media-container">
+                    <a href="https://www.instagram.com/andikadwiputrrra" target="_blank" class="animated-social-btn instagram-btn" id="instagramBtn">
+                        <span class="icon">📸</span>
+                        <span class="text">Follow Instagram</span>
+                        <span class="follower-count">@andikadwiputrrra</span>
+                    </a>
+                    <a href="https://wa.me/6281215276475" target="_blank" class="animated-social-btn whatsapp-btn" id="whatsappBtn">
+                        <span class="icon">💬</span>
+                        <span class="text">Chat WhatsApp</span>
+                        <span class="follower-count">Hubungi Saya</span>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="interactive-section">
+                <h2 class="section-title">✉️ Hubungi Saya</h2>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <input type="text" id="contactName" placeholder="Nama Anda" required>
+                    <input type="email" id="contactEmail" placeholder="Email Anda" required>
+                    <textarea id="contactMessage" rows="5" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+                <div class="result" id="resultContact"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
