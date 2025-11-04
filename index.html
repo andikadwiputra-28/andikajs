@@ -167,7 +167,15 @@
                     <input type="text" id="contactName" placeholder="Nama Anda" required>
                     <input type="email" id="contactEmail" placeholder="Email Anda" required>
                     <textarea id="contactMessage" rows="5" placeholder="Pesan Anda" required></textarea>
-                    <button type="submit">Kirim Pesan</button>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button type="button" onclick="sendViaWhatsApp()" style="flex: 1; min-width: 200px; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+                            💬 Kirim via WhatsApp
+                        </button>
+                        <button type="submit" style="flex: 1; min-width: 200px;">
+                            📧 Kirim Pesan
+                        </button>
+                    </div>
                 </form>
                 <div class="result" id="resultContact"></div>
             </div>

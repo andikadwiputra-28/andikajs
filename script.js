@@ -78,7 +78,72 @@ function handleSubmit(event) {
         Terima kasih <strong>${name}</strong>!<br>
         Saya akan membalas ke <strong>${email}</strong> segera.
     `;
+    
+    // Auto hide setelah 5 detik
+    setTimeout(() => {
+        resultDiv.style.display = 'none';
+    }, 5000);
+    
     document.querySelector('.contact-form').reset();
+}
+
+function sendViaWhatsApp() {
+    const name = document.getElementById('contactName').value;
+    const email = document.getElementById('contactEmail').value;
+    const message = document.getElementById('contactMessage').value;
+    const resultDiv = document.getElementById('resultContact');
+    
+    // Validasi form
+    if (!name || !email || !message) {
+        resultDiv.style.display = 'block';
+        resultDiv.style.background = '#ffe7e7';
+        resultDiv.style.borderLeftColor = '#ff4444';
+        resultDiv.innerHTML = `
+            <strong>⚠️ Peringatan!</strong><br>
+            Mohon isi semua field terlebih dahulu.
+        `;
+        
+        setTimeout(() => {
+            resultDiv.style.display = 'none';
+        }, 3000);
+        return;
+    }
+    
+    // Format pesan untuk WhatsApp
+    const whatsappMessage = 
+        `*Pesan dari Portfolio Website*%0A` +
+        `━━━━━━━━━━━━━━━━━━━━%0A%0A` +
+        `*Nama:* ${encodeURIComponent(name)}%0A` +
+        `*Email:* ${encodeURIComponent(email)}%0A%0A` +
+        `*Pesan:*%0A${encodeURIComponent(message)}%0A%0A` +
+        `━━━━━━━━━━━━━━━━━━━━%0A` +
+        `_Dikirim dari andikadwiputra-28.github.io/andikajs_`;
+    
+    // Nomor WhatsApp (ganti dengan nomor Anda)
+    const phoneNumber = '6281215276475';
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    
+    // Buka WhatsApp di tab baru
+    window.open(whatsappURL, '_blank');
+    
+    // Tampilkan pesan sukses
+    resultDiv.style.display = 'block';
+    resultDiv.style.background = '#e7f9ff';
+    resultDiv.style.borderLeftColor = '#25D366';
+    resultDiv.innerHTML = `
+        <strong>✅ Pesan Siap Dikirim!</strong><br>
+        WhatsApp telah dibuka di tab baru.<br>
+        Klik tombol <strong>Send</strong> untuk mengirim pesan.
+    `;
+    
+    setTimeout(() => {
+        resultDiv.style.display = 'none';
+    }, 5000);
+    
+    // Reset form setelah 2 detik
+    setTimeout(() => {
+        document.querySelector('.contact-form').reset();
+    }, 2000);
 }
 function toggleTheme() {
     const body = document.body;
