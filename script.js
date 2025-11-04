@@ -11,6 +11,7 @@ function init() {
     displayGreeting();
     animateSkills();
     animateSocialButtons();
+    animateOnScroll();
 }
 function updateVisitorCount() {
     visitorCount = Math.floor(Math.random() * 1000) + 1;
@@ -96,7 +97,37 @@ function animateSkills() {
     skillCards.forEach((card, index) => {
         setTimeout(() => {
             card.style.animation = `fadeInUp 0.5s ease forwards`;
+            
+            // Animate skill progress bars
+            const progressBar = card.querySelector('.skill-progress');
+            if (progressBar) {
+                const progress = progressBar.getAttribute('data-progress');
+                setTimeout(() => {
+                    progressBar.style.width = progress + '%';
+                }, 200);
+            }
         }, index * 100);
+    });
+}
+
+// Animate info cards on scroll
+function animateOnScroll() {
+    const cards = document.querySelectorAll('.info-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        observer.observe(card);
     });
 }
 document.addEventListener('DOMContentLoaded', init);

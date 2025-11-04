@@ -11,28 +11,79 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
 
     <div class="container-custom">
        
         <div class="hero-section">
-            <h1 id="greeting">Halo nama saya Andika Dwi Putra</h1>
-            <p>Mahasiswa Semester 1 di Universitas Dian Nuswantoro</p>
-            <img src="andika.jpg" alt="foto andika" class="profile-img" id="profileImg">
-            <div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 id="greeting" class="glowing-text">Halo nama saya Andika Dwi Putra</h1>
+                <p class="typing-effect">Mahasiswa Semester 1 di Universitas Dian Nuswantoro</p>
+                <div class="profile-container">
+                    <img src="andika.jpg" alt="foto andika" class="profile-img" id="profileImg">
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring-2"></div>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">🎓 Sistem Informasi</span>
+                    <span class="badge">💻 Web Developer</span>
+                    <span class="badge">🚀 Tech Enthusiast</span>
+                </div>
             </div>
         </div>
         <div class="content-section">
-            <h2 class="section-title">📋 Tentang Diri Saya</h2>
-            <table class="info-table">
+            <h2 class="section-title animated-title">📋 Tentang Diri Saya</h2>
+            <div class="info-card-container">
+                <div class="info-card">
+                    <div class="info-icon">👤</div>
+                    <div class="info-label">Nama</div>
+                    <div class="info-value">Andika Dwi Putra</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎫</div>
+                    <div class="info-label">NIM</div>
+                    <div class="info-value">A12.2024.07164</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📚</div>
+                    <div class="info-label">Program Studi</div>
+                    <div class="info-value">Sistem Informasi</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🏛️</div>
+                    <div class="info-label">Universitas</div>
+                    <div class="info-value">Dian Nuswantoro</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <div class="info-label">Email</div>
+                    <div class="info-value">andikaputradwi006@gmail.com</div>
+                </div>
+            </div>
+
+            <table class="info-table" style="display: none;">
                 <tr>
                     <th>Nama</th>
                     <td>Andika Dwi Putra</td>
                 </tr>
                 <tr>
                     <th>NIM</th>
-                    <td>A12.2024.07169</td>
+                    <td>A12.2024.07164</td>
                 </tr>
                 <tr>
                     <th>Program Studi</th>
@@ -49,32 +100,52 @@
             </table>
 
             <!-- SKILLS SECTION -->
-            <h2 class="section-title">💻 Skill yang Saya Punya</h2>
+            <h2 class="section-title animated-title">💻 Skill yang Saya Punya</h2>
             <div class="skills-container">
-                <div class="skill-card" onclick="showSkillInfo('Microsoft Office')">
-                    <div style="font-size: 3rem;">📊</div>
+                <div class="skill-card skill-card-enhanced" onclick="showSkillInfo('Microsoft Office')">
+                    <div class="skill-icon">📊</div>
                     <h4>Microsoft Office</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                    <span class="skill-level">85%</span>
                 </div>
-                <div class="skill-card" onclick="showSkillInfo('HTML')">
-                    <div style="font-size: 3rem;">🌐</div>
+                <div class="skill-card skill-card-enhanced" onclick="showSkillInfo('HTML')">
+                    <div class="skill-icon">🌐</div>
                     <h4>HTML</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="90"></div>
+                    </div>
+                    <span class="skill-level">90%</span>
                 </div>
-                <div class="skill-card" onclick="showSkillInfo('CSS')">
-                    <div style="font-size: 3rem;">🎨</div>
+                <div class="skill-card skill-card-enhanced" onclick="showSkillInfo('CSS')">
+                    <div class="skill-icon">🎨</div>
                     <h4>CSS</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="88"></div>
+                    </div>
+                    <span class="skill-level">88%</span>
                 </div>
-                <div class="skill-card" onclick="showSkillInfo('PHP')">
-                    <div style="font-size: 3rem;">🐘</div>
+                <div class="skill-card skill-card-enhanced" onclick="showSkillInfo('PHP')">
+                    <div class="skill-icon">🐘</div>
                     <h4>PHP</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                    <span class="skill-level">75%</span>
                 </div>
-                <div class="skill-card" onclick="showSkillInfo('JavaScript')">
-                    <div style="font-size: 3rem;">⚡</div>
+                <div class="skill-card skill-card-enhanced" onclick="showSkillInfo('JavaScript')">
+                    <div class="skill-icon">⚡</div>
                     <h4>JavaScript</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                    <span class="skill-level">80%</span>
                 </div>
             </div>
 
             <div class="interactive-section">
-                <h2 class="section-title">📱 Social Media</h2>
+                <h2 class="section-title animated-title">📱 Social Media</h2>
                 <div class="social-media-container">
                     <a href="https://www.instagram.com/andikadwiputrrra" target="_blank" class="animated-social-btn instagram-btn" id="instagramBtn">
                         <span class="icon">📸</span>
@@ -91,7 +162,7 @@
 
             
             <div class="interactive-section">
-                <h2 class="section-title">✉️ Hubungi Saya</h2>
+                <h2 class="section-title animated-title">✉️ Hubungi Saya</h2>
                 <form class="contact-form" onsubmit="handleSubmit(event)">
                     <input type="text" id="contactName" placeholder="Nama Anda" required>
                     <input type="email" id="contactEmail" placeholder="Email Anda" required>
